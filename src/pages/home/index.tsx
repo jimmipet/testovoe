@@ -5,9 +5,9 @@ import React from "react";
 const HomePage = () => {
   return (
     <>
-      <div className="w-full h-[100vh] flex flex-col">
+      <div className="w-full h-[100%] flex flex-col ">
         <Header />
-        <div className="w-full h-[auto] flex items-center justify-center flex-col">
+        <div className="w-full h-auto flex items-center justify-center flex-col">
           <Mesh />
         </div>
       </div>
