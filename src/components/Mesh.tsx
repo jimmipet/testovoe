@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card";
 
-const Mesh = () => {
+const Mesh = ({ refreshKey }) => {
   const [cards, setCards] = useState<any>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [fetching, setFetching] = useState(true);
@@ -38,10 +38,10 @@ const Mesh = () => {
     return function () {
       document.removeEventListener("scroll", scrollHandler);
     };
-  }, [cards, totalcount]);
+  }, [cards, totalcount, refreshKey]);
 
   return (
-    <div className="w-[70%] h-auto overflow-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-rows-2 gap-4 p-4 grid-auto-rows-[1fr]">
+    <div className="w-[70%] min-[200px]:w-[90%] h-auto overflow-auto grid grid-cols-1 min-[500px]:grid-cols-2 min-[325px]:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 grid-rows-2 gap-4 p-4 grid-auto-rows-[1fr]">
       {cards.map((card) => (
         <Card key={card.id} card={card} />
       ))}

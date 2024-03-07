@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
-const Header = () => {
+const Header = ({ onCardAdded }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
   const [photo, setPhoto] = useState("");
@@ -69,7 +69,7 @@ const Header = () => {
       .post("http://localhost:3001/cards", newCard)
       .then((response) => {
         console.log("Card added successfully:", response.data);
-        
+        onCardAdded();
         setIsOpen(false);
       })
       .catch((error) => {

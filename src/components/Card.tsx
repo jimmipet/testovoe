@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({ card }) => {
     <Link href={`/product/${card.id}`}>
       <div
         id={card.id}
-        className="p-2 m-2 h-[40vh] min-[500px]:h-[30vh] md:h-[40vh] lg:h-[37vh] xl:h-[35vh] 2xl:h-[37vh] 3xl:h-[45vh] flex flex-col rounded-lg shadow-lg bg-gray-200 transition-transform transform hover:scale-105"
+        className=" p-2 m-2 h-[70vh] min-[500px]:h-[50vh] md:h-[33vh] lg:h-[40vh] xl:h-[45vh] 2xl:h-[60vh] min-[1600px]:h-[50vh] min-[2000px]:h-[55vh] flex flex-col justify-between rounded-lg shadow-lg bg-gray-200 transition-transform transform hover:scale-105"
       >
         <div className="rounded-t-lg h-[85%] w-[100%] relative">
           <Image

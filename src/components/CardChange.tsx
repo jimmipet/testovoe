@@ -13,6 +13,14 @@ const CardChange = ({ id }: { id: string }) => {
   const [price, setPrice] = useState("0");
   const [count, setCount] = useState("0");
 
+  const backToHome = () => {
+    const confirmDelete = window.confirm(
+      "Вы точно хотите покинуть страницу редактирования?"
+    );
+    if (confirmDelete) {
+      router.push("/");
+    }
+  };
   function closeModal() {
     setIsOpen(false);
   }
@@ -88,13 +96,15 @@ const CardChange = ({ id }: { id: string }) => {
 
   return (
     <div className="w-full h-[100%]">
-      <div className="flex  flex-col w-full h-[100%] items-center">
+      <div className="flex  flex-col w-full h-[100%] max-[500px]:h-auto items-center">
         <div className="flex items-center justify-center h-[10%] mb-6">
-          <h2 className="text-3xl">Информация о товаре и редактирвоание</h2>
+          <h2 className="text-3xl max-[500px]:text-2xl max-[400px]:text-xl max-[325px]:text-lg">
+            Информация о товаре и редактирвоание
+          </h2>
         </div>
 
-        <div className="w-[70%] h-[80%] flex justify-between rounded-[35px] ring-2 ring-gray-300 shadow-xl">
-          <div className="rounded-[20px] h-[95%] w-[35%] relative m-3 flex flex-col">
+        <div className="w-[70%] h-[80%] max-[500px]:h-[1100px] min-[200px]:w-[90%] min-[500px]:w-[80%] md:w-[75%] max-[500px]:flex-col max-[500px]:items-center flex justify-between rounded-[35px] ring-2 ring-gray-300 shadow-xl">
+          <div className="rounded-[20px] h-[95%] w-[35%] max-[500px]:w-[90%] max-[500px]:h-[100%] max-[500px]:items-center relative m-3 flex flex-col">
             <div className="rounded-[20px] h-[90%] w-[100%] relative flex flex-col">
               {cardsInfo?.photo ? (
                 <Image
@@ -111,31 +121,41 @@ const CardChange = ({ id }: { id: string }) => {
             </div>
             <button
               onClick={openModal}
-              className="mt-5 text-2xl bg-white hover:bg-gray-200 text-black font-mono py-2 px-4 rounded-[10px] transition duration-300 ease-in-out"
+              className="mt-5 text-xl max-[500px]:text-lg bg-white hover:bg-gray-200 text-black font-mono py-2 px-4 rounded-[10px] transition duration-300 ease-in-out"
             >
               Редактировать
             </button>
             <button
               onClick={deleteCard}
-              className="mt-2 text-2xl bg-white hover:bg-gray-200 text-black font-mono py-2 px-4 rounded-[10px] transition duration-300 ease-in-out"
+              className="mt-2 text-xl max-[500px]:text-lg bg-white hover:bg-gray-200 text-black font-mono py-2 px-4 rounded-[10px] transition duration-300 ease-in-out"
             >
               Удалить карточку
             </button>
+            <button
+              onClick={backToHome}
+              className="mt-2 text-xl max-[500px]:text-lg bg-white hover:bg-gray-200 text-black font-mono py-2 px-4 rounded-[10px] transition duration-300 ease-in-out"
+            >
+              Вернуться назад
+            </button>
           </div>
 
-          <div className="flex flex-col w-[50%] justify-around">
-            <div>
-              <h3 className="text-5xl mb-4">Описание товара</h3>
-              <p className="text-xl">{cardsInfo?.about}</p>
+          <div className="flex flex-col w-[50%]  justify-around max-[500px]:w-[70%] max-[500px]:justify-center max-[500px]:items-center max-[500px]:flex ">
+            <div className="max-[500px]:w-[100%] max-[500px]:justify-center max-[500px]:items-center max-[500px]:flex-col ">
+              <h3 className="text-5xl mb-4 max-[500px]:text-lg">
+                Описание товара
+              </h3>
+              <p className="text-xl max-[500px]:text-lg">{cardsInfo?.about}</p>
             </div>
 
             <div className="flex items-center">
-              <p className="text-3xl">Цена</p>
+              <p className="text-3xl max-[500px]:text-lg">Цена</p>
               <span className="ml-7 text-2xl">{cardsInfo?.price},$</span>
             </div>
 
             <div className="flex items-center">
-              <p className="text-3xl">Количество на складе</p>
+              <p className="text-3xl max-[500px]:text-lg">
+                Количество на складе
+              </p>
               <span className="ml-7 text-2xl">{cardsInfo?.count}, шт</span>
             </div>
           </div>
@@ -266,4 +286,3 @@ const CardChange = ({ id }: { id: string }) => {
 };
 
 export default CardChange;
-

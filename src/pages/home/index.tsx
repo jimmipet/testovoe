@@ -1,14 +1,27 @@
 import Header from "@/components/Header";
 import Mesh from "@/components/Mesh";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const HomePage = () => {
+  const [refreshMesh, setRefreshMesh] = useState(false);
+
+  useEffect(() => {
+    if (refreshMesh) {
+      setRefreshMesh(false);
+    }
+  }, [refreshMesh]);
+
+  const handleCardAdded = () => {
+    // Вызывается после успешного добавления карточки
+    setRefreshMesh(true);
+  };
+
   return (
     <>
       <div className="w-full h-[100%] flex flex-col ">
-        <Header />
+        <Header onCardAdded={handleCardAdded} />
         <div className="w-full h-auto flex items-center justify-center flex-col">
-          <Mesh />
+          <Mesh key={refreshMesh} />
         </div>
       </div>
     </>
