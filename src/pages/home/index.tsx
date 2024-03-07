@@ -12,7 +12,6 @@ const HomePage = () => {
   }, [refreshMesh]);
 
   const handleCardAdded = () => {
-    // Вызывается после успешного добавления карточки
     setRefreshMesh(true);
   };
 
