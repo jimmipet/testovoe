@@ -3,7 +3,7 @@
     {
       "photo": "https://images.techinsider.ru/upload/img_cache/9b5/9b56c003d032ee25521915f222270108_cropped_666x666.jpg",
       "about": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero similique facere voluptatibus placeat saepe perferendis, sit impedit debitis excepturi fuga molestias doloribus. Facere laboriosam dicta, odio mollitia nam nostrum esse",
-      "price": 4129,
+      "price": 32,
       "count": 76,
       "id": "1"
     },
@@ -167,13 +167,6 @@
       "about": "21",
       "price": 123,
       "count": 123
-    },
-    {
-      "id": "6e0d41cc-8bc5-4ca0-be8f-27ea0535a2ec",
-      "photo": "https://static.tildacdn.com/tild3664-6138-4131-b139-306463633562/image.png",
-      "about": "123",
-      "price": 123,
-      "count": 13
     }
   ]
 }
